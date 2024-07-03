@@ -1,8 +1,10 @@
+
+root = true
+
 [*.{kt,kts}]
-disabled_rules=function-naming
 indent_size = 4
 continuation_indent_size = 4
-disabled_rules=indent,parameter-list-wrapping,parameter-list-wrapping
+disabled_rules=function-naming,indent,parameter-list-wrapping,parameter-list-wrapping
 
 # Compose specific rules
 [*.kt]
