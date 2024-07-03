@@ -4,7 +4,13 @@ plugins {
     kotlin("kapt")
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+
+    // ktlint
     id("org.jlleitschuh.gradle.ktlint")
+
+    // firebase
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 ktlint {
@@ -91,6 +97,11 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("androidx.room:room-ktx:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
+
+    // firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
