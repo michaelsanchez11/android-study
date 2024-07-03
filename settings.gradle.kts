@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android Knowledge"
 include(":app")
- 

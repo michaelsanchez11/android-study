@@ -4,6 +4,12 @@ plugins {
     kotlin("kapt")
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    id("org.jlleitschuh.gradle.ktlint")
+}
+
+ktlint {
+    version.set("0.45.2")
+    android.set(true)
 }
 
 android {
@@ -28,7 +34,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -63,23 +69,23 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    //navigation in compose
-    implementation ("androidx.navigation:navigation-compose:2.7.7")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
+    // navigation in compose
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
-    //viewmodels
+    // viewmodels
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
 
-    //retrofit
+    // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    //hilt
+    // hilt
     implementation("com.google.dagger:hilt-android:2.51")
     kapt("com.google.dagger:hilt-android-compiler:2.51")
     kapt("androidx.hilt:hilt-compiler:1.2.0")
 
-    //room
+    // room
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
